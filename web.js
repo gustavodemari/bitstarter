@@ -1,15 +1,15 @@
 var express = require('express');
 var fs = require('fs');
 
-var app = express.createserver(express.logger());
+var app = express.createServer(express.logger());
 
-var index = fs.readfilesync('index.html').toString();
+var index = fs.readFileSync('index.html').toString();
 
 app.get('/', function(request, response) {
   response.send(index);
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
